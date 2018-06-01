@@ -1,9 +1,22 @@
 $(document).ready(initializeApp);
 
 function initializeApp() {
-  $('.reset-button').click(resetGame);
+  attachClickHandlers();
   console.log("works!");
 }
+
+function attachClickHandlers(){
+  $(".dirtHill").on("click", dogeClickHandler);
+  $('.reset-button').click(resetGame);
+  console.log("works!");
+};
+
+function dogeClickHandler(){
+  if ($(this).hasClass(".dogeImg")){
+    $(this).removeClass(".dogeImg");
+    pointCounter +=1;
+  };
+};
 
 function dogePoint(){
   var pointCounter = 0;
