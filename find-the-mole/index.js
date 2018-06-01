@@ -3,7 +3,12 @@ $(document).ready(initializeApp);
 function initializeApp() {
   attachClickHandlers();
   console.log("works!");
+  $('.start').click(startHandler);
   setInterval(randomDogePop,1000);
+}
+function startHandler(){
+  $('.start').addClass('hiddenModal');
+  bgMusicPlay();
 }
 function randomDogePop(){
     //2 seconds.
@@ -15,10 +20,6 @@ function randomDogePop(){
     setTimeout(function () {
         dogeDiv.removeClass('doge');
     },1000);
-}
-
-function dogeMovement() {
-  $("#div").toggleClass("hidden");
 }
 function attachClickHandlers(){
   $(".center").on("click",dogeClickHandler);
@@ -55,6 +56,9 @@ function resetGame(pointCounter){
   $('.score').text("score: " + pointCounter);
 }
 
-var sounds = {
-  clickSound: new Audio(click.wav),
+var bgMusic = new Audio('audio/bgMusic.mp3');    
+function bgMusicPlay(){
+    bgMusic.play();
+    bgMusic.loop=true;
 }
+var clickSound =  new Audio('audio/click.mp3');
