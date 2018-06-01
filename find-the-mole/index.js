@@ -25,12 +25,17 @@ function attachClickHandlers(){
   $('.reset-button').click(resetGame);
   console.log("works!");
 };
+
+var pointCounter = 0;
 function dogeClickHandler(){
-  if ($(this).hasClass(".dogeImg")){
-    $(this).removeClass(".dogeImg");
+  if ($(this).hasClass(".doge")){
+    $(this).removeClass(".doge");
     pointCounter +=1;
+    clickSound.play();
   };
+  $('.score').text(pointCounter);
 };
+
 function dogePoint(){
   var pointCounter = 0;
   $('.clickableDoge').click(function(){
@@ -43,7 +48,7 @@ function dogePoint(){
 
 
 function resetGame(pointCounter){
-  var pointCounter = 0;
+  pointCounter = 0;
 }
 
 var sounds = {
