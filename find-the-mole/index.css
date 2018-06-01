@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.game-container {
+    display: flex;
+    height: 80vmin;
+    width: 80vmin;
+    flex-wrap: wrap;
+}
+
+.game-container .dirt-hill {
+    flex: 1 1 20%;
+    border: 1px solid black;
+}
+
+
+
