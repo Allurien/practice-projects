@@ -1,25 +1,51 @@
 body {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: url("./images/grassBackground.jpg");
+  font-family: "Press Start 2P", cursive;
 }
 
+.score-container {
+  height: 80vmin;
+  width: 40vmin;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-container h1 {
+  text-align: center;
+}
+
+.score-container .reset-button:hover {
+  cursor: pointer;
+  animation: flash .1s infinite alternate;
+  transform: scale(2);
+}
+
+@keyframes flash {
+  from {
+    color: white;
+  }
+  to {
+    color: hotpink;
+  }
+}
 
 .game-container {
-    display: flex;
-    height: 80vmin;
-    width: 80vmin;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vmin;
+  width: 80vmin;
 }
 
 .game-container .dirt-hill {
-    flex: 1 1 20%;
-    border: 1px solid black;
+  flex: 1 1 20%;
+  border: 1px solid black;
 }
-
-
-
