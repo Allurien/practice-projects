@@ -4,7 +4,7 @@ function initializeApp() {
   attachClickHandlers();
   console.log("works!");
   $('.start').click(startHandler);
-  setInterval(randomDogePop,1000);
+  setInterval(randomDogePop,250);
 }
 function startHandler(){
   $('.start').addClass('hiddenModal');
@@ -26,31 +26,18 @@ function attachClickHandlers(){
   $('.reset-button').click(resetGame);
   console.log("works!");
 };
-
 var pointCounter = 0;
 function dogeClickHandler(){
   console.log(this);
   if ($(this).hasClass("doge")){
     $(this).removeClass("doge");
     pointCounter +=1;
-    //clickSound.play();
+    clickSound.play();
     console.log('CLICKED')
   };
   $('.score').text("score: " + pointCounter);
   console.log('outter click')
 };
-
-// function dogePoint(){
-//   var pointCounter = 0;
-//   $('.clickableDoge').click(function(){
-//     pointCounter++;
-//     clickSound.play();
-//     $('.score').text(pointCounter);
-//   })
-//   return pointCounter;
-// }
-
-
 function resetGame(pointCounter){
   pointCounter = 0;
   $('.score').text("score: " + pointCounter);
@@ -60,5 +47,9 @@ var bgMusic = new Audio('audio/bgMusic.mp3');
 function bgMusicPlay(){
     bgMusic.play();
     bgMusic.loop=true;
+    
+    
 }
 var clickSound =  new Audio('audio/click.mp3');
+bgMusic.volume = 0.5;
+clickSound.volume = 1;

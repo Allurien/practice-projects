@@ -47,7 +47,7 @@ body {
 
 .game-container .dirt-hill {
   flex: 1 1 20%;
-  border: 1px solid black;
+  border: 1px solid transparent;
   position: relative;
 }
 
@@ -117,6 +117,7 @@ body {
   position: absolute; 
   top: 50%;
   left: 50%;
+  width: 100%;  
   transform: translate(-50%, -50%);
   margin: auto;
   color: white;
