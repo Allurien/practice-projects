@@ -19,8 +19,8 @@ body {
 .game-container .dirt-hill {
     flex: 1 1 20%;
     border: 1px solid black;
+    position: relative;
 }
-
 .hidden {
     display: hidden;
 }
@@ -39,5 +39,29 @@ body {
     50% {
       bottom: 100px;
     }
+.holeTop{
+    width: 100%;
+    height: 50%;
+    background: url("images/holeTop.png");
+    background-size: cover;
 }
 
+.holeBottom{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background: url("images/holeBottom.png");
+    background-size: cover;
+    z-index: 1;
+}
+
+.doge{
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(.75,.75);
+    background: url("images/doge.png");
+    background-size: cover;
+}
