@@ -21,34 +21,38 @@ function dogeMovement() {
   $("#div").toggleClass("hidden");
 }
 function attachClickHandlers(){
-  $(".dirtHill").on("click", dogeClickHandler);
+  $(".center").on("click",dogeClickHandler);
   $('.reset-button').click(resetGame);
   console.log("works!");
 };
 
 var pointCounter = 0;
 function dogeClickHandler(){
-  if ($(this).hasClass(".doge")){
-    $(this).removeClass(".doge");
+  console.log(this);
+  if ($(this).hasClass("doge")){
+    $(this).removeClass("doge");
     pointCounter +=1;
-    clickSound.play();
+    //clickSound.play();
+    console.log('CLICKED')
   };
-  $('.score').text(pointCounter);
+  $('.score').text("score: " + pointCounter);
+  console.log('outter click')
 };
 
-function dogePoint(){
-  var pointCounter = 0;
-  $('.clickableDoge').click(function(){
-    pointCounter++;
-    clickSound.play();
-    $('.score').text(pointCounter);
-  })
-  return pointCounter;
-}
+// function dogePoint(){
+//   var pointCounter = 0;
+//   $('.clickableDoge').click(function(){
+//     pointCounter++;
+//     clickSound.play();
+//     $('.score').text(pointCounter);
+//   })
+//   return pointCounter;
+// }
 
 
 function resetGame(pointCounter){
   pointCounter = 0;
+  $('.score').text("score: " + pointCounter);
 }
 
 var sounds = {
