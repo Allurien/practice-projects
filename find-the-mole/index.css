@@ -1,50 +1,100 @@
 body {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: url("./images/grassBackground.jpg");
+  font-family: "Press Start 2P", cursive;
 }
 
+.score-container {
+  height: 80vmin;
+  width: 40vmin;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-container h1 {
+  text-align: center;
+}
+
+.score-container .reset-button:hover {
+  cursor: pointer;
+  animation: flash 0.1s infinite alternate;
+  transform: scale(2);
+}
+
+@keyframes flash {
+  from {
+    color: white;
+  }
+  to {
+    color: hotpink;
+  }
+}
 
 .game-container {
-    display: flex;
-    height: 80vmin;
-    width: 80vmin;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vmin;
+  width: 80vmin;
 }
 
 .game-container .dirt-hill {
-    flex: 1 1 20%;
-    border: 1px solid black;
-    position: relative;
+  flex: 1 1 20%;
+  border: 1px solid black;
+  position: relative;
 }
 
-.holeTop{
-    width: 100%;
-    height: 50%;
-    background: url("images/holeTop.png");
-    background-size: cover;
+.hidden {
+  display: hidden;
 }
 
-.holeBottom{
-    position: relative;
-    width: 100%;
-    height: 50%;
-    background: url("images/holeBottom.png");
-    background-size: cover;
-    z-index: 1;
+.dogeUp {
+  animation: upDown 1s linear 1;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
 }
 
-.doge{
-    position: absolute;
-    top: -20%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: scale(.75,.75);
-    background: url("images/doge.png");
-    background-size: cover;
+@keyframes upDown {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  }
+}
+
+.holeTop {
+  width: 100%;
+  height: 50%;
+  background: url("images/holeTop.png");
+  background-size: cover;
+}
+
+.holeBottom {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background: url("images/holeBottom.png");
+  background-size: cover;
+  z-index: 1;
+}
+
+.doge {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.75, 0.75);
+  background: url("images/doge.png");
+  background-size: cover;
 }
