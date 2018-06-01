@@ -11,28 +11,23 @@ function attachClickHandlers(){
   console.log("works!");
 };
 
+var pointCounter = 0;
+
 function dogeClickHandler(){
-  if ($(this).hasClass(".dogeImg")){
-    $(this).removeClass(".dogeImg");
+  if ($(this).hasClass(".doge")){
+    $(this).removeClass(".doge");
     pointCounter +=1;
+    clickSound.play();
   };
+  $('.score').text(pointCounter);
 };
 
-function dogePoint(){
-  var pointCounter = 0;
-  $('.clickableDoge').click(function(){
-    pointCounter++;
-    clickSound.play();
-    $('.score').text(pointCounter);
-  })
-  return pointCounter;
-}
 
 
 
 
 function resetGame(pointCounter){
-  var pointCounter = 0;
+  pointCounter = 0;
 }
 
 var sounds = {
