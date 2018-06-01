@@ -25,7 +25,7 @@ body {
 
 .score-container .reset-button:hover {
   cursor: pointer;
-  animation: flash .1s infinite alternate;
+  animation: flash 0.1s infinite alternate;
   transform: scale(2);
 }
 
@@ -48,4 +48,53 @@ body {
 .game-container .dirt-hill {
   flex: 1 1 20%;
   border: 1px solid black;
+  position: relative;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.dogeUp {
+  animation: upDown 1s linear 1;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+
+@keyframes upDown {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  }
+}
+
+.holeTop {
+  width: 100%;
+  height: 50%;
+  background: url("images/holeTop.png");
+  background-size: cover;
+}
+
+.holeBottom {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background: url("images/holeBottom.png");
+  background-size: cover;
+  z-index: 1;
+}
+
+.doge {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.75, 0.75);
+  background: url("images/doge.png");
+  background-size: cover;
 }
