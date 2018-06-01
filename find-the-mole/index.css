@@ -68,7 +68,7 @@ body {
     bottom: 0;
   }
   50% {
-    bottom: 100px;
+    bottom: 60px;
   }
 }
 
@@ -90,7 +90,7 @@ body {
 
 .doge {
   position: absolute;
-  top: -20%;
+  animation: upDown 1s linear 1;
   left: 0;
   width: 100%;
   height: 100%;
