@@ -14,7 +14,7 @@ function randomDogePop(){
     var dogeDiv = $(centerDiv).addClass('doge');
     setTimeout(function () {
         dogeDiv.removeClass('doge');
-    },2000);
+    },1000);
 }
 
 function dogeMovement() {
